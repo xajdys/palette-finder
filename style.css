@@ -88,6 +88,7 @@ main {
     padding: 1.25rem;
     border: 1px solid #e2e8f0;
     border-radius: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .palette-grid article h2 {
@@ -135,4 +136,9 @@ main {
 
 .palette-grid article button:hover {
     background-color: #6d28d9;
+}
+
+.palette-grid article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgb(15 23 42 / 10%);
 }
