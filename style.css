@@ -142,3 +142,8 @@ main {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgb(15 23 42 / 10%);
 }
+
+.palette-grid article button:focus-visible {
+    outline: 3px solid #c4b5fd;
+    outline-offset: 3px;
+}
