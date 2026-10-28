@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palette Finder</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -35,80 +36,80 @@
         <p id="no-results" hidden>
             No palettes match your search or filter.
         </p>
+        <div class="palette-grid">
+            <article class="palette" data-name="sunset jam" data-mood="warm">
+                <h2>Sunset Jam</h2>
+                <p>A warm palette inspired by evening skies.</p>
 
-        <article class="palette" data-name="sunset jam" data-mood="warm">
-            <h2>Sunset Jam</h2>
-            <p>A warm palette inspired by evening skies.</p>
+                <ul class="colors">
+                    <li data-color="#ff7b54" style="--swatch-color: #ff7b54;">#ff7b54</li>
+                    <li data-color="#ffb26b" style="--swatch-color: #ffb26b;">#ffb26b</li>
+                    <li data-color="#ffd56b" style="--swatch-color: #ffd56b;">#ffd56b</li>
+                </ul>
 
-            <ul class="colors">
-                <li data-color="#ff7b54">#ff7b54</li>
-                <li data-color="#ffb26b">#ffb26b</li>
-                <li data-color="#ffd56b">#ffd56b</li>
-            </ul>
+                <menu>
+                    <li>
+                        <button type="button" class="copy-colors">
+                            Copy colors
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="favorite">
+                            Favorite
+                        </button>
+                    </li>
+                </menu>
+            </article>
 
-            <menu>
-                <li>
-                    <button type="button" class="copy-colors">
-                        Copy colors
-                    </button>
-                </li>
-                <li>
-                    <button type="button" class="favorite">
-                        Favorite
-                    </button>
-                </li>
-            </menu>
-        </article>
 
-        
-    <article class="palette" data-name="ocean calm" data-mood="cool">
-      <h2>Ocean Calm</h2>
-      <p>A cool, peaceful palette inspired by sea water.</p>
+            <article class="palette" data-name="ocean calm" data-mood="cool">
+                <h2>Ocean Calm</h2>
+                <p>A cool, peaceful palette inspired by sea water.</p>
 
-      <ul class="colors">
-        <li data-color="#065a82">#065a82</li>
-        <li data-color="#1b9aaa">#1b9aaa</li>
-        <li data-color="#c8f4f1">#c8f4f1</li>
-      </ul>
+                <ul class="colors">
+                    <li data-color="#065a82" style="--swatch-color: #065a82;">#065a82</li>
+                    <li data-color="#1b9aaa" style="--swatch-color: #1b9aaa;">#1b9aaa</li>
+                    <li data-color="#c8f4f1" style="--swatch-color: #c8f4f1;">#c8f4f1</li>
+                </ul>
 
-      <menu>
-        <li><button type="button" class="copy-colors">Copy colors</button></li>
-        <li><button type="button" class="favorite">Favorite</button></li>
-      </menu>
-    </article>
+                <menu>
+                    <li><button type="button" class="copy-colors">Copy colors</button></li>
+                    <li><button type="button" class="favorite">Favorite</button></li>
+                </menu>
+            </article>
 
-    <article class="palette" data-name="forest study" data-mood="calm">
-      <h2>Forest Study</h2>
-      <p>A calm, natural palette for focused workspaces.</p>
+            <article class="palette" data-name="forest study" data-mood="calm">
+                <h2>Forest Study</h2>
+                <p>A calm, natural palette for focused workspaces.</p>
 
-      <ul class="colors">
-        <li data-color="#2d6a4f">#2d6a4f</li>
-        <li data-color="#74c69d">#74c69d</li>
-        <li data-color="#f4f1de">#f4f1de</li>
-      </ul>
+                <ul class="colors">
+                    <li data-color="#2d6a4f" style="--swatch-color: #2d6a4f;">#2d6a4f</li>
+                    <li data-color="#74c69d" style="--swatch-color: #74c69d;">#74c69d</li>
+                    <li data-color="#f4f1de" style="--swatch-color: #f4f1de;">#f4f1de</li>
+                </ul>
 
-      <menu>
-        <li><button type="button" class="copy-colors">Copy colors</button></li>
-        <li><button type="button" class="favorite">Favorite</button></li>
-      </menu>
-    </article>
+                <menu>
+                    <li><button type="button" class="copy-colors">Copy colors</button></li>
+                    <li><button type="button" class="favorite">Favorite</button></li>
+                </menu>
+            </article>
 
-    <article class="palette" data-name="neon focus" data-mood="bold">
-      <h2>Neon Focus</h2>
-      <p>A bold, high-energy palette for creative projects.</p>
+            <article class="palette" data-name="neon focus" data-mood="bold">
+                <h2>Neon Focus</h2>
+                <p>A bold, high-energy palette for creative projects.</p>
 
-      <ul class="colors">
-        <li data-color="#ff007f">#ff007f</li>
-        <li data-color="#00e5ff">#00e5ff</li>
-        <li data-color="#ffee00">#ffee00</li>
-      </ul>
+                <ul class="colors">
+                    <li data-color="#ff007f" style="--swatch-color: #ff007f;">#ff007f</li>
+                    <li data-color="#00e5ff" style="--swatch-color: #00e5ff;">#00e5ff</li>
+                    <li data-color="#ffee00" style="--swatch-color: #ffee00;">#ffee00</li>
+                </ul>
 
-      <menu>
-        <li><button type="button" class="copy-colors">Copy colors</button></li>
-        <li><button type="button" class="favorite">Favorite</button></li>
-      </menu>
-    </article>
-
+                <menu>
+                    <li><button type="button" class="copy-colors">Copy colors</button></li>
+                    <li><button type="button" class="favorite">Favorite</button></li>
+                </menu>
+            </article>
+        </div>
     </main>
 </body>
 
