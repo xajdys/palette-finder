@@ -100,3 +100,18 @@ main {
     line-height: 1.5;
     margin-bottom: 1rem;
 }
+
+.colors {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.colors li {
+    flex: 1;
+    min-width: 0;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--swatch-color, #e2e8f0);
+}
