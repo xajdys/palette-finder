@@ -148,7 +148,3 @@ main {
     outline: 3px solid #c4b5fd;
     outline-offset: 3px;
 }
-
-.colors li:hover {
-    transform: scale(1.05);
-}
