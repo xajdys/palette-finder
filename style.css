@@ -132,3 +132,7 @@ main {
     font: inherit;
     cursor: pointer;
 }
+
+.palette-grid article button:hover {
+    background-color: #6d28d9;
+}
