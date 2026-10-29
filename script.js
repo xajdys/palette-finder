@@ -1,0 +1,1 @@
+console.log("Palette Finder JavaScript is connected!");
