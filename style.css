@@ -116,6 +116,11 @@ main {
     border-radius: 0.5rem;
     background-color: var(--swatch-color, #e2e8f0);
     transform: transform 0.2s ease;
+    padding: 0.75em;
+}
+
+.colors li:hover {
+    transform: scale(1.1);
 }
 
 .palette-grid article menu {
