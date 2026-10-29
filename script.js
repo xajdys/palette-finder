@@ -29,3 +29,20 @@ copyButtons.forEach((button) => {
     });
   });
 });
+
+const favoriteButtons= document.querySelectorAll(".favorite");
+// console.log(favoriteButtons.length);
+
+favoriteButtons.forEach((button)=>{
+  button.addEventListener("click", ()=>{
+    button.classList.toggle("active");
+    button.setAttribute("aria-pressed", button.classList.contains("active"));
+
+    if(button.classList.contains("active")){
+      button.textContent = "★ Favorite";
+    }
+    else {
+      button.textContent = "Favorite";
+    }
+  });
+});

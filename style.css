@@ -153,3 +153,7 @@ main {
     outline: 3px solid #c4b5fd;
     outline-offset: 3px;
 }
+
+.palette-grid article button.favorite.active {
+    background-color: #E2AE57;
+}
