@@ -61,14 +61,33 @@ favoriteButtons.forEach((button) => {
 // console.log(favoriteButtons[0].closest(".palette").dataset.name);
 
 favoriteButtons.forEach((button) => {
-    const palette = button.closest(".palette");
-    const paletteName = palette.dataset.name;
+  const palette = button.closest(".palette");
+  const paletteName = palette.dataset.name;
 
-    if (favorites.includes(paletteName)) {
-        button.classList.add("active");
-        button.textContent = "★ Favorite";
-        button.setAttribute("aria-pressed", "true");
+  if (favorites.includes(paletteName)) {
+    button.classList.add("active");
+    button.textContent = "★ Favorite";
+    button.setAttribute("aria-pressed", "true");
+  } else {
+    button.setAttribute("aria-pressed", "false");
+  }
+});
+
+const moodFilter = document.getElementById("mood-filter");
+const palettes = document.querySelectorAll(".palette");
+
+moodFilter.addEventListener("change", () => {
+  // console.log(moodFilter.value);
+
+  const selectedMood = moodFilter.value;
+
+  palettes.forEach((palette) => {
+    const paletteMood = palette.dataset.mood;
+
+    if (selectedMood === "" || selectedMood === paletteMood) {
+      palette.hidden = false;
     } else {
-        button.setAttribute("aria-pressed", "false");
+      palette.hidden = true;
     }
+  });
 });
