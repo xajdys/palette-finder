@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palette Finder</title>
+    
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -17,17 +19,20 @@
 
         <search>
             <form>
-                <label for="palette-search">Search palettes</label>
-                <input type="search" id="palette-search" name="q" placeholder="Try sunset, ocean or forest">
-
-                <label for="mood-filter">Filter by mood</label>
-                <select id="mood-filter" name="mood">
-                    <option value="">All moods</option>
-                    <option value="warm">Warm</option>
-                    <option value="cool">Cool</option>
-                    <option value="calm">Calm</option>
-                    <option value="bold">Bold</option>
-                </select>
+                <div class="form-field">
+                    <label for="palette-search">Search palettes</label>
+                    <input type="search" id="palette-search" name="q" placeholder="Try sunset, ocean or forest">
+                </div>
+                <div class="form-field">
+                    <label for="mood-filter">Filter by mood</label>
+                    <select id="mood-filter" name="mood">
+                        <option value="">All moods</option>
+                        <option value="warm">Warm</option>
+                        <option value="cool">Cool</option>
+                        <option value="calm">Calm</option>
+                        <option value="bold">Bold</option>
+                    </select>
+                </div>
             </form>
         </search>
     </header>
@@ -111,6 +116,7 @@
             </article>
         </div>
     </main>
+    
 </body>
 
 </html>
