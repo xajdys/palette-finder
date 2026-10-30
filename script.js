@@ -4,6 +4,8 @@ const colorSwatches = document.querySelectorAll(".colors li");
 
 const copyButtons = document.querySelectorAll(".copy-colors");
 
+const noResults = document.getElementById("no-results");
+
 copyButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const palette = button.closest(".palette");
@@ -75,19 +77,51 @@ favoriteButtons.forEach((button) => {
 
 const moodFilter = document.getElementById("mood-filter");
 const palettes = document.querySelectorAll(".palette");
+const paletteSearch = document.getElementById("palette-search");
 
-moodFilter.addEventListener("change", () => {
-  // console.log(moodFilter.value);
+// moodFilter.addEventListener("change", () => {
+//   // console.log(moodFilter.value);
 
-  const selectedMood = moodFilter.value;
+//   const selectedMood = moodFilter.value;
 
-  palettes.forEach((palette) => {
-    const paletteMood = palette.dataset.mood;
+//   palettes.forEach((palette) => {
+//     const paletteMood = palette.dataset.mood;
 
-    if (selectedMood === "" || selectedMood === paletteMood) {
-      palette.hidden = false;
-    } else {
-      palette.hidden = true;
-    }
-  });
-});
+//     if (selectedMood === "" || selectedMood === paletteMood) {
+//       palette.hidden = false;
+//     } else {
+//       palette.hidden = true;
+//     }
+//   });
+// });
+
+// paletteSearch.addEventListener("input", () => {
+//   console.log(paletteSearch.value);
+// });
+
+function filterPalettes() {
+    const searchText = paletteSearch.value.toLowerCase().trim();
+    const selectedMood = moodFilter.value;
+    let visibleCount = 0;
+
+    palettes.forEach((palette) => {
+        
+        const paletteName = palette.dataset.name;
+        const paletteMood = palette.dataset.mood;
+
+        const matchesSearch = paletteName.includes(searchText);
+        const matchesMood = selectedMood === "" || selectedMood === paletteMood;
+
+        if (matchesSearch && matchesMood) {
+            visibleCount++;
+            palette.hidden = false;
+        } else {
+            palette.hidden = true;
+        }
+    });
+
+    noResults.hidden = visibleCount > 0;
+}
+
+moodFilter.addEventListener("change", filterPalettes);
+paletteSearch.addEventListener("input", filterPalettes);
