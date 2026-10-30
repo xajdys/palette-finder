@@ -4,6 +4,8 @@ const colorSwatches = document.querySelectorAll(".colors li");
 
 const copyButtons = document.querySelectorAll(".copy-colors");
 
+const noResults = document.getElementById("no-results");
+
 copyButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const palette = button.closest(".palette");
@@ -61,14 +63,65 @@ favoriteButtons.forEach((button) => {
 // console.log(favoriteButtons[0].closest(".palette").dataset.name);
 
 favoriteButtons.forEach((button) => {
-    const palette = button.closest(".palette");
-    const paletteName = palette.dataset.name;
+  const palette = button.closest(".palette");
+  const paletteName = palette.dataset.name;
 
-    if (favorites.includes(paletteName)) {
-        button.classList.add("active");
-        button.textContent = "★ Favorite";
-        button.setAttribute("aria-pressed", "true");
-    } else {
-        button.setAttribute("aria-pressed", "false");
-    }
+  if (favorites.includes(paletteName)) {
+    button.classList.add("active");
+    button.textContent = "★ Favorite";
+    button.setAttribute("aria-pressed", "true");
+  } else {
+    button.setAttribute("aria-pressed", "false");
+  }
 });
+
+const moodFilter = document.getElementById("mood-filter");
+const palettes = document.querySelectorAll(".palette");
+const paletteSearch = document.getElementById("palette-search");
+
+// moodFilter.addEventListener("change", () => {
+//   // console.log(moodFilter.value);
+
+//   const selectedMood = moodFilter.value;
+
+//   palettes.forEach((palette) => {
+//     const paletteMood = palette.dataset.mood;
+
+//     if (selectedMood === "" || selectedMood === paletteMood) {
+//       palette.hidden = false;
+//     } else {
+//       palette.hidden = true;
+//     }
+//   });
+// });
+
+// paletteSearch.addEventListener("input", () => {
+//   console.log(paletteSearch.value);
+// });
+
+function filterPalettes() {
+    const searchText = paletteSearch.value.toLowerCase().trim();
+    const selectedMood = moodFilter.value;
+    let visibleCount = 0;
+
+    palettes.forEach((palette) => {
+        
+        const paletteName = palette.dataset.name;
+        const paletteMood = palette.dataset.mood;
+
+        const matchesSearch = paletteName.includes(searchText);
+        const matchesMood = selectedMood === "" || selectedMood === paletteMood;
+
+        if (matchesSearch && matchesMood) {
+            visibleCount++;
+            palette.hidden = false;
+        } else {
+            palette.hidden = true;
+        }
+    });
+
+    noResults.hidden = visibleCount > 0;
+}
+
+moodFilter.addEventListener("change", filterPalettes);
+paletteSearch.addEventListener("input", filterPalettes);

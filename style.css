@@ -157,3 +157,7 @@ main {
 .palette-grid article button.favorite.active {
     background-color: #E2AE57;
 }
+
+#no-results {
+    color: red;
+}
